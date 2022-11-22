@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 8fr 1fr;
+}
+
+.header {
+  grid-row: 1 / 2;
+  display: flex;
+  background-color: green;
+  border: 5px solid black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 55px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 5px solid black;
+  border-top: none;
+}
+
+.weather {
+  background-color: aqua;
+}
+
+.detailed-weather-info {
+  background-color: blue;
+}
+
+.footer {
+  grid-row: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+  border: 5px solid black;
+  border-top: none;
+}
