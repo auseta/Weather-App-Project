@@ -3,6 +3,7 @@ export const ui = () => {
   appWrapper.innerHTML = `
     <div class='header'>
       <h1>MY WEATHER APP</h1>
+      <button class='units-button fahrenheit'>DISPLAY °F</button>
       <form>
         <label for='location'>
           <span>LOCATION</span>
