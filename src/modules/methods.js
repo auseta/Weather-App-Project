@@ -1,17 +1,27 @@
-export const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const days = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 export const getDay = (date) => new Date(date * 1000).getDay();
-// eslint-disable-next-line no-mixed-operators
-const toFahrenheit = (temp) => ((temp * 9 / 5) + 32).toFixed(2);
 
-export const displayFahrenheit = (weatherData) => {
+const toFahrenheit = (temp) => ((temp * 9) / 5 + 32).toFixed(2);
+
+const displayFahrenheit = (weatherData) => {
   const content = document.querySelector('.content');
   content.innerHTML = `
   <div class='basic-weather-info'>
     <div class='weather-info'>
       <div class='weather-data-section'>
         <div class='day-state'>
-          <img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png' alt='weather-img'>
-          <p>${weatherData.weather[0].description}</p>  
+          <img src='http://openweathermap.org/img/wn/${
+  weatherData.weather[0].icon
+}@2x.png' alt='weather-img'>
+          <p class='weather-state'>${weatherData.weather[0].description}</p>  
         </div>
         <div class='data'>
           <p>${days[getDay(weatherData.dt)]}</p>
@@ -44,7 +54,7 @@ export const displayCelcius = (weatherData) => {
       <div class='weather-data-section'>
         <div class='day-state'>
           <img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png' alt='weather-img'>
-          <p>${weatherData.weather[0].description}</p>  
+          <p class='weather-state'>${weatherData.weather[0].description}</p>  
         </div>
         <div class='data'>
           <p>${days[getDay(weatherData.dt)]}</p>
@@ -67,4 +77,23 @@ export const displayCelcius = (weatherData) => {
     <p>Cloudiness: ${weatherData.clouds.all} %</p>
   </div>
   `;
+};
+
+export const resetUnitsButton = (button) => {
+  button.className = 'units-button fahrenheit';
+  button.textContent = 'DISPLAY °F';
+};
+
+export const displayUnits = (e, weatherData) => {
+  if (e.target.classList.contains('fahrenheit')) {
+    displayFahrenheit(weatherData);
+    e.target.classList.toggle('fahrenheit');
+    e.target.classList.toggle('celcius');
+    e.target.textContent = 'DISPLAY °C';
+  } else {
+    displayCelcius(weatherData);
+    e.target.classList.toggle('celcius');
+    e.target.classList.toggle('fahrenheit');
+    e.target.textContent = 'DISPLAY °F';
+  }
 };
