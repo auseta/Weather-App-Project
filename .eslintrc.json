@@ -17,6 +17,9 @@
             "single"
         ],
         "semi" : [2, "always"],
-        "import/prefer-default-export" : "off"
+        "import/prefer-default-export" : "off",
+        "padded-blocks" : "off",
+        "no-param-reassign":"off",
+        "max-len" :"off"
     }
 }
