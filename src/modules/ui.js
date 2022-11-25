@@ -7,10 +7,11 @@ export const ui = () => {
       <form>
         <label for='location'>
           <span>LOCATION</span>
-          <input type='text' id='location' minlength=5 maxlength=15 required>
+          <input type='text' id='location' minlength=4 maxlength=15 required>
         </label>
         <button>search</button>
       </form>
+      <p class='error'></p>
     </div>
 
     <div class='loading'>
