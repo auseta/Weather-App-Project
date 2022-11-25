@@ -1,5 +1,5 @@
 import {
-  days, getDay, displayUnits, resetUnitsButton,
+  displayUnits, resetUnitsButton, displayCelcius,
 } from './methods';
 
 export const findLocation = () => {
@@ -12,10 +12,10 @@ export const findLocation = () => {
     const previousContent = content.innerHTML;
     try {
       const unitsButton = document.querySelector('.units-button');
+      // ------ When submitting the form, a loading animation is displayed ------ //
       content.classList.toggle('content');
       content.classList.toggle('loading');
       content.innerHTML = `
-
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
@@ -25,50 +25,12 @@ export const findLocation = () => {
 
       const weatherData = await response.json();
 
-      const weatherIcon = weatherData.weather[0].icon;
-      const weatherLocation = weatherData.name;
-      const weatherDay = days[getDay(weatherData.dt)];
-      const weatherMin = weatherData.main.temp_min;
-      const weatherMax = weatherData.main.temp_max;
-      const weatherState = weatherData.weather[0].description;
-      const weatherTemp = weatherData.main.temp;
-      const weatherHumidity = weatherData.main.humidity;
-      const weatherFeelsLike = weatherData.main.feels_like;
-      const weatherWindSpeed = weatherData.wind.speed;
-      const weatherCloudiness = weatherData.clouds.all;
+      // ------ Once Fetch retrieves the data from the OpenWeather API without any problems, it will load all the weather data for the location entered in the input. ------//
 
       content.classList.toggle('loading');
       content.classList.toggle('content');
-      content.innerHTML = `
-      <div class='basic-weather-info'>
-        <div class='weather-info'>
-          <div class='weather-data-section'>
-            <div class='day-state'>
-              <img src='http://openweathermap.org/img/wn/${weatherIcon}@2x.png' alt='weather-img'>
-              <p class='weather-state'>${weatherState}</p>  
-            </div>
-            <div class='data'>
-              <p>${weatherDay}</p>
-              <p>${weatherLocation}</p>
-              <p>${weatherTemp}°C</p>
-            </div>
-          </div>
-        </div>
 
-        <div class='weather-temps-info'>
-          <p>Max: ${weatherMax}°C</p>
-          <p>Min: ${weatherMin}°C</p>
-        </div>
-      </div>
-    
-      <div class='detailed-weather-info'>
-        <p>Humidity: ${weatherHumidity} %</p>
-        <p>Feels Like: ${weatherFeelsLike}°C</p>
-        <p>Wind Speed: ${weatherWindSpeed} km/h</p>
-        <p>Cloudiness: ${weatherCloudiness} %</p>
-      </div>
-      `;
-
+      displayCelcius(weatherData);
       resetUnitsButton(unitsButton);
 
       unitsButton.onclick = (f) => {
