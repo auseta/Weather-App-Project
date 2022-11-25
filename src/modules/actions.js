@@ -1,5 +1,5 @@
 import {
-  displayUnits, resetUnitsButton, displayCelcius,
+  displayUnits, resetUnitsButton, displayCelcius, displayError,
 } from './methods';
 
 export const findLocation = () => {
@@ -7,9 +7,16 @@ export const findLocation = () => {
   const formLocation = document.querySelector('form');
 
   formLocation.addEventListener('submit', async (e) => {
+
     e.preventDefault();
+
+    const locationError = document.querySelector('.error');
+    locationError.style.cssText = '';
+    locationError.textContent = '';
+
     const content = document.querySelector('.content');
     const previousContent = content.innerHTML;
+
     try {
       const unitsButton = document.querySelector('.units-button');
       // ------ When submitting the form, a loading animation is displayed ------ //
@@ -40,6 +47,7 @@ export const findLocation = () => {
     } catch (error) {
       content.className = 'content';
       content.innerHTML = previousContent;
+      displayError();
     }
   });
 };
