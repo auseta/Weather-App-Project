@@ -241,6 +241,7 @@ button:active {
   .day-state .weather-state {
     font-size: 22px;
     width: 330px;
+    text-align: center;
   }
 
   .data {
