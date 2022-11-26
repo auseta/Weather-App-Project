@@ -81,7 +81,11 @@ button:active {
 }
 
 .error {
-  position: absolute
+  position: absolute;
+  padding:5px;
+  right: 60px;
+  top: 120px;
+  font-size: 12px;
 }
 
 .loading {
@@ -187,6 +191,11 @@ button:active {
   .app-wrapper {
     grid-template-rows: 1fr 4fr 1fr;
     padding: 10px 5px;
+  }
+
+  .error {
+    top: 150px;
+    font-size: 10px;
   }
 
   .header {
