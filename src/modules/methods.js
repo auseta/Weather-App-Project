@@ -100,7 +100,7 @@ export const displayUnits = (e, weatherData) => {
 
 export const displayError = () => {
   const error = document.querySelector('.error');
-  error.style.cssText = 'top: 120px;color: red;background-color: #000000;padding:5px;border: 5px solid red;right: 60px; font-size: 12px;';
+  error.style.cssText = 'color: red;background-color: #000000;border: 5px solid red;';
   error.textContent = 'THE LOCATION YOU ENTERED DOES NOT EXIST.';
   setTimeout(() => {
     error.style.cssText = '';
