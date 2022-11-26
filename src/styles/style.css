@@ -186,7 +186,7 @@ button:active {
 
   .app-wrapper {
     grid-template-rows: 1fr 4fr 1fr;
-    padding: 5px 5px;
+    padding: 10px 5px;
   }
 
   .header {
@@ -226,6 +226,12 @@ button:active {
 
   .weather-data-section {
     display: block;
+    width: 300px;
+  }
+
+  .day-state .weather-state {
+    font-size: 22px;
+    width: 330px;
   }
 
   .data {
@@ -242,8 +248,13 @@ button:active {
 
   .detailed-weather-info {
     gap: 10px;
-    margin-right: 68px;
+    margin-right: 10px;
     justify-content: unset;
     padding: 10px 0;
+  }
+
+  .footer p {
+    padding: 5px;
+    font-size: 10px;
   }
 }
