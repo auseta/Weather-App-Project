@@ -1,6 +1,7 @@
 import {
   displayUnits, resetUnitsButton, displayCelcius, displayError,
 } from './methods';
+import { apiKey } from './apiKEY';
 
 export const findLocation = () => {
   const inputLocation = document.querySelector('#location');
@@ -28,7 +29,7 @@ export const findLocation = () => {
       </div>
       `;
 
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputLocation.value}&appid=d0c81f539747596641485b095cf691a1&units=metric`, { mode: 'cors' });
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputLocation.value}&appid=${apiKey}&units=metric`, { mode: 'cors' });
 
       const weatherData = await response.json();
 
