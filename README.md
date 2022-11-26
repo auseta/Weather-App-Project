@@ -4,11 +4,12 @@ To obtain data, fetch and the <strong>OpenWeather API</strong> were used.</p>
 
 <h2>Features</h2>
 <ul>
-  <li>compatibility with old browsers thanks to Babel.</li>
+  <li>Compatibility with old browsers thanks to Babel.</li>
   <li>Option to display temperatures in Celsius and Fahrenheit</li>
   <li>An error message is displayed when entering a non-existent location.</li>
   <li>An image and the status of the day will be displayed</li>
   <li>It will show on the screen the day, the place, the temperature, the minimum/maximum temperature, the humidity, the wind speed, the cloudiness and the wind chill.</li>
+  <li>Bootstrap is used to display a loading animation until the data is retrieved from the API.</li>
 </ul>
 
 <h2>Languages</h2>
