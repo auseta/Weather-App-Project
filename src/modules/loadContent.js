@@ -1,11 +1,12 @@
 import { displayUnits, displayCelcius } from './methods';
+import { apiKey } from './apiKEY';
 
 const loadMainConent = async () => {
   const loading = document.querySelector('.loading');
 
   try {
 
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=d0c81f539747596641485b095cf691a1&units=metric', { mode: 'cors' });
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=${apiKey}&units=metric`, { mode: 'cors' });
 
     const weatherData = await response.json();
 
