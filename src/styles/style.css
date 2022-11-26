@@ -167,7 +167,6 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .footer p {
@@ -175,4 +174,73 @@ button:active {
   border: 5px solid #000000;
   padding: 5px 25px;
   box-shadow:4px 4px 0px 0px #000000;
+}
+
+@media (max-width: 360px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+
+  .app-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+  }
+
+  .header {
+    padding: 0;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  form span, form button, .units-button {
+    font-size: 14px;
+  }
+
+  form input {
+    height: 25px;
+  }
+
+  form button {
+    align-self: flex-end;   
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content p {
+    font-size: 14px;
+    -webkit-text-stroke: 1px #000000;
+  }
+
+  .basic-weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .weather-data-section {
+    display: block;
+  }
+
+  .data {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .weather-temps-info {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .detailed-weather-info {
+    gap: 10px;
+    justify-content: unset;
+    padding: 10px 0;
+  }
 }
