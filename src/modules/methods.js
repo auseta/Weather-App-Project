@@ -21,11 +21,11 @@ const displayFahrenheit = (weatherData) => {
           <img src='http://openweathermap.org/img/wn/${
   weatherData.weather[0].icon
 }@2x.png' alt='weather-img'>
-          <p class='weather-state'>${weatherData.weather[0].description}</p>  
+          <p class='weather-state'>${weatherData.weather[0].description.toUpperCase()}</p>  
         </div>
         <div class='data'>
-          <p>${days[getDay(weatherData.dt)]}</p>
-          <p>${weatherData.name}</p>
+          <p>${days[getDay(weatherData.dt)].toUpperCase()}</p>
+          <p>${weatherData.name.toUpperCase()}</p>
           <p>${toFahrenheit(weatherData.main.temp)}°F</p>
         </div>
       </div>
@@ -38,10 +38,10 @@ const displayFahrenheit = (weatherData) => {
   </div>
 
   <div class='detailed-weather-info'>
-    <p>Humidity: ${weatherData.main.humidity} %</p>
-    <p>Feels Like: ${toFahrenheit(weatherData.main.feels_like)}°F</p>
-    <p>Wind Speed: ${weatherData.wind.speed} km/h</p>
-    <p>Cloudiness: ${weatherData.clouds.all} %</p>
+    <p>HUMIDITY: ${weatherData.main.humidity} %</p>
+    <p>FEELS LIKE: ${toFahrenheit(weatherData.main.feels_like)}°F</p>
+    <p>WIND SPEED: ${weatherData.wind.speed} km/h</p>
+    <p>CLOUDINESS: ${weatherData.clouds.all} %</p>
   </div>
   `;
 };
@@ -54,11 +54,11 @@ export const displayCelcius = (weatherData) => {
       <div class='weather-data-section'>
         <div class='day-state'>
           <img src='http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png' alt='weather-img'>
-          <p class='weather-state'>${weatherData.weather[0].description}</p>  
+          <p class='weather-state'>${weatherData.weather[0].description.toUpperCase()}</p>  
         </div>
         <div class='data'>
-          <p>${days[getDay(weatherData.dt)]}</p>
-          <p>${weatherData.name}</p>
+          <p>${days[getDay(weatherData.dt)].toUpperCase()}</p>
+          <p>${weatherData.name.toUpperCase()}</p>
           <p>${weatherData.main.temp}°C</p>
         </div>
       </div>
@@ -71,10 +71,10 @@ export const displayCelcius = (weatherData) => {
   </div>
 
   <div class='detailed-weather-info'>
-    <p>Humidity: ${weatherData.main.humidity} %</p>
-    <p>Feels Like: ${weatherData.main.feels_like}°C</p>
-    <p>Wind Speed: ${weatherData.wind.speed} km/h</p>
-    <p>Cloudiness: ${weatherData.clouds.all} %</p>
+    <p>HUMIDITY: ${weatherData.main.humidity} %</p>
+    <p>FEELS LIKE: ${weatherData.main.feels_like}°C</p>
+    <p>WIND SPEED: ${weatherData.wind.speed} km/h</p>
+    <p>CLOUDINESS: ${weatherData.clouds.all} %</p>
   </div>
   `;
 };

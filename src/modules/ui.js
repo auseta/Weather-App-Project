@@ -9,7 +9,7 @@ export const ui = () => {
           <span>LOCATION</span>
           <input type='text' id='location' minlength=4 maxlength=15 required>
         </label>
-        <button>search</button>
+        <button>SEARCH</button>
       </form>
       <p class='error'></p>
     </div>
